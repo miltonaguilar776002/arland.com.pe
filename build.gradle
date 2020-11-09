@@ -1,0 +1,76 @@
+task compilar  {
+	//PROPIEDADES
+	//Se pueden acceder desde la tarea local y fuera
+	// compilar.nombre 
+	// compilar.version
+	// compilar.correo
+	ext {
+		nombre = "BackGround Arland"
+		version = "1.0"
+		correo = "milton.aguilar.776002@gmail.com"	
+	}
+	//PROPIEDAD DE FORMA RESUMIDA 
+	
+	//Forma corta
+	ext.telefono  = "999999999"
+	
+	//Como Variable 
+	Date dtAhora = new Date();
+	
+	//COMPORTAMIENTO
+	// Codigo que se ejecuta en un momento determinado 
+	
+	//DO LAST
+	//doLast es el mas importante , se lanza al terminarde ejecutar una tarea
+    doLast 
+ 	{
+ 		println("=========================================================================" );
+        println("INICIO COMPILADO..."+ compilar.nombre+ " version : " + compilar.version );
+        println("EN CASO DE PROBLEMAS AVISAR A :"+ compilar.correo );
+        println("O LLAMAR AL NUMERO  :"+ compilar.telefono);
+        println("=========================================================================" );
+        println("Estoy compilando  ..." + dtAhora)
+                
+        println("=========================================================================" );
+        println("FINAL COMPILADO ..."+ compilar.nombre+ " version : " + compilar.version );
+        println("=========================================================================" );
+    }
+}
+
+task empaquetar  {
+
+
+}
+//OTRA LUGAR/FORMA DE DETALLAR UN COMPORTAMIENTO
+empaquetar.doLast 
+{
+ 		println("=========================================================================" );
+        println("INICIO EMPAQUETADO..."+ compilar.nombre+ " version : " + compilar.version );
+        println("EN CASO DE PROBLEMAS AVISAR A :"+ compilar.correo );
+        println("O LLAMAR AL NUMERO  :"+ compilar.telefono);
+        println("=========================================================================" );
+        
+        println("Estoy ejecutando el empaquetado ..." + dtAhora)
+        
+        println("=========================================================================" );
+        println("FINAL EMPAQUETADO ..."+ compilar.nombre+ " version : " + compilar.version );
+        println("=========================================================================" );
+}
+
+task testear  {
+    doLast 
+ 	{
+ 		println("=========================================================================" );
+        println("INICIO TEST..."+ compilar.nombre+ " version : " + compilar.version );
+        println("EN CASO DE PROBLEMAS AVISAR A :"+ compilar.correo );
+        println("O LLAMAR AL NUMERO  :"+ compilar.telefono);
+        println("=========================================================================" );
+        
+        println("Estoy ejecutando los test ..."+ dtAhora)
+        
+        println("=========================================================================" );
+        println("FINAL TEST ..."+ compilar.nombre+ " version : " + compilar.version );
+        println("=========================================================================" );
+
+    }
+}
